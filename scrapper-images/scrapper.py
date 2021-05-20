@@ -70,18 +70,21 @@ def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver,
                 time.sleep(sleep_between_interactions)
             except Exception:
                 continue
-
-            # extract image urls
-            actual_images = wd.find_elements_by_css_selector('img.n3VNCb')
-            for actual_image in actual_images:
-                src = actual_image.get_attribute('src')
-                # print(len(src))
-                if src and 'http' in src:
-                    image_urls.add(src)
-                    download_image(output_folder, src)
-                # elif 'data:' in src:
-                #     images_base64.add(src)
-                #     download_base64(output_folder, src)
+            
+            try:
+                # extract image urls
+                actual_images = wd.find_elements_by_css_selector('img.n3VNCb')
+                for actual_image in actual_images:
+                    src = actual_image.get_attribute('src')
+                    # print(len(src))
+                    if src and 'http' in src:
+                        image_urls.add(src)
+                        download_image(output_folder, src)
+                    # elif 'data:' in src:
+                    #     images_base64.add(src)
+                    #     download_base64(output_folder, src)
+            except:
+                print('error to find img.n3VNCb')
 
             image_count = len(image_urls) + len(images_base64)
             print('{p:2.2f}%'.format(p=100*image_count/max_links_to_fetch))
@@ -130,7 +133,7 @@ def download_image(folder_path: str, url: str):
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
         file_path = os.path.join(
-            folder_path, hashlib.sha1(img_data).hexdigest()[:10])
+            folder_path, hashlib.sha1(img_data).hexdigest()[:10] + '.jpg')
         with open(file_path, 'wb') as f:
             f.write(img_data)
         # print(f"SUCCESS - saved as {file_path}")
