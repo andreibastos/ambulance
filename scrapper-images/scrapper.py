@@ -52,6 +52,7 @@ def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver,
     image_count = 0
     results_start = 0
     output_folder = os.path.join(OUTPUT_FOLDER_IMAGES, query)
+    filepath_links = os.path.join(OUTPUT_FOLDER_LINKS, query)
 
     while image_count < max_links_to_fetch:
         scroll_to_end(wd)
@@ -85,6 +86,10 @@ def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver,
                     #     download_base64(output_folder, src)
             except:
                 print('error to find img.n3VNCb')
+
+            with open(filepath_links, 'a') as f:
+                for link in image_urls:
+                    f.write("%s\n" % link)
 
             image_count = len(image_urls) + len(images_base64)
             print('{p:2.2f}%'.format(p=100*image_count/max_links_to_fetch))
@@ -167,8 +172,5 @@ if __name__ == '__main__':
         links, base64s = fetch_image_and_download(query, max_links, wd)
         if not os.path.exists(OUTPUT_FOLDER_LINKS):
             os.makedirs(OUTPUT_FOLDER_LINKS)
-        filepath_links = os.path.join(OUTPUT_FOLDER_LINKS, query)
-        with open(filepath_links, 'a') as f:
-            for link in links:
-                f.write("%s\n" % link)
+        
     wd.quit()
