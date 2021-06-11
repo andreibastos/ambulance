@@ -8,6 +8,8 @@ import socket
 from selenium import webdriver
 import time
 import os
+from PIL import Image
+
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -139,8 +141,12 @@ def download_image(folder_path: str, url: str):
             os.makedirs(folder_path)
         file_path = os.path.join(
             folder_path, hashlib.sha1(img_data).hexdigest()[:10] + '.jpg')
-        with open(file_path, 'wb') as f:
-            f.write(img_data)
+        
+        # convertendo para RGB para tirar o PNG ou gif
+        image = Image.open(img_path)
+        image = image.convert('RGB')
+        image.save(file_path)
+        
         # print(f"SUCCESS - saved as {file_path}")
 
     except Exception as e:
