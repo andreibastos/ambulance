@@ -43,6 +43,7 @@ net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
 
 images_periods = dict()
+times = 10
 
 for f in os.listdir(args["image"]):	
 	if not '.jpg' in f:
@@ -58,21 +59,22 @@ for f in os.listdir(args["image"]):
 	# determine only the *output* layer names that we need from YOLO
 	ln = net.getLayerNames()
 	ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
-
+	print(image_name)
 	# construct a blob from the input image and then perform a forward
 	# pass of the YOLO object detector, giving us our bounding boxes and
 	# associated probabilities
-	blob = cv2.dnn.blobFromImage(image, 1 / 255.0, (416, 416),
-		swapRB=True, crop=False)
-	net.setInput(blob)
-	start = time.time()
-	layerOutputs = net.forward(ln)
-	end = time.time()
+	for i in range(times):
+		blob = cv2.dnn.blobFromImage(image, 1 / 255.0, (416, 416),
+			swapRB=True, crop=False)
+		net.setInput(blob)
+		start = time.time()
+		layerOutputs = net.forward(ln)
+		end = time.time()
 
-	# show timing information on YOLO
-	period = end - start
-	print("[INFO] YOLO took {:.2f} ms and {} fps".format(period*1000, 1/period))
-	images_periods[image_name].push(period)
+		# show timing information on YOLO
+		period = end - start
+		print("[INFO] YOLO took {:.2f} ms and {} fps".format(period*1000, 1/period))
+		images_periods[image_name].append(period)
 
 	# initialize our lists of detected bounding boxes, confidences, and
 	# class IDs, respectively
@@ -153,3 +155,6 @@ for f in os.listdir(args["image"]):
 	# cv2.imshow("Image", image)
 	# cv2.waitKey(0)
 	print('\n')
+
+for name, periods  in images_periods.items():
+	print(name, periods)

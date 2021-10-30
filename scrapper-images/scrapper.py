@@ -134,6 +134,7 @@ def download_image(folder_path: str, url: str):
 
     except Exception as e:
         print(f"ERROR - Could not download {url} - {e}")
+        return
 
     try:
         folder_path = os.path.join(folder_path)

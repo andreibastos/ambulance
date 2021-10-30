@@ -1,0 +1,93 @@
+[
+{
+ "frame_id":1, 
+ "filename":"data/validation/0cda1863ee21cd0e.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.518649, "center_y":0.503585, "width":0.809582, "height":0.883634}, "confidence":0.997827}
+ ] 
+}, 
+{
+ "frame_id":2, 
+ "filename":"data/validation/6a4747066ffd113f.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.565529, "center_y":0.565516, "width":0.678360, "height":0.785563}, "confidence":0.997941}
+ ] 
+}, 
+{
+ "frame_id":3, 
+ "filename":"data/validation/8e72808537176248.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.896301, "center_y":0.591559, "width":0.130002, "height":0.122206}, "confidence":0.985920}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.374593, "center_y":0.527770, "width":0.653675, "height":0.877125}, "confidence":0.952505}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.820873, "center_y":0.600176, "width":0.061012, "height":0.137395}, "confidence":0.932383}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.760378, "center_y":0.597123, "width":0.040715, "height":0.190310}, "confidence":0.893552}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.949223, "center_y":0.587455, "width":0.062350, "height":0.124526}, "confidence":0.772946}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.791958, "center_y":0.598556, "width":0.037930, "height":0.140865}, "confidence":0.702987}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.783400, "center_y":0.603856, "width":0.046316, "height":0.203516}, "confidence":0.461791}
+ ] 
+}, 
+{
+ "frame_id":4, 
+ "filename":"data/validation/b292c1fb4197276a.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.520072, "center_y":0.499153, "width":0.776425, "height":0.785954}, "confidence":0.999409}
+ ] 
+}, 
+{
+ "frame_id":5, 
+ "filename":"data/validation/3f8b2a35be3341ae.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.492166, "center_y":0.497786, "width":0.721557, "height":0.835648}, "confidence":0.999006}
+ ] 
+}, 
+{
+ "frame_id":6, 
+ "filename":"data/validation/81be0b735c57cb7e.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.416758, "center_y":0.562336, "width":0.719118, "height":0.721717}, "confidence":0.998625}
+ ] 
+}, 
+{
+ "frame_id":7, 
+ "filename":"data/validation/9a8637fb33ba2e11.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.508642, "center_y":0.490159, "width":0.845295, "height":0.554444}, "confidence":0.999144}
+ ] 
+}, 
+{
+ "frame_id":8, 
+ "filename":"data/validation/bbe07c3a618b3a5a.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.508628, "center_y":0.484069, "width":0.819358, "height":0.929584}, "confidence":0.977530}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.282875, "center_y":0.508183, "width":0.584939, "height":1.011628}, "confidence":0.381120}
+ ] 
+}, 
+{
+ "frame_id":9, 
+ "filename":"data/validation/66ebca32add046cf.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.674034, "center_y":0.327129, "width":0.615603, "height":0.717123}, "confidence":0.855579}
+ ] 
+}, 
+{
+ "frame_id":10, 
+ "filename":"data/validation/8929c86d5aecf832.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.946319, "center_y":0.204395, "width":0.103321, "height":0.181067}, "confidence":0.883291}
+ ] 
+}, 
+{
+ "frame_id":11, 
+ "filename":"data/validation/9ea4706b69ca4217.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.491418, "center_y":0.602053, "width":0.754387, "height":0.766477}, "confidence":0.987725}
+ ] 
+}, 
+{
+ "frame_id":12, 
+ "filename":"data/validation/fa748ef4fa55ee54.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.488041, "center_y":0.507599, "width":0.718438, "height":0.859044}, "confidence":0.997115}
+ ] 
+}
+]

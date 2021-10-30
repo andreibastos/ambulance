@@ -1,0 +1,92 @@
+[
+{
+ "frame_id":1, 
+ "filename":"data/validation/0cda1863ee21cd0e.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.406026, "center_y":0.503726, "width":0.758157, "height":0.889831}, "confidence":0.949919}
+ ] 
+}, 
+{
+ "frame_id":2, 
+ "filename":"data/validation/6a4747066ffd113f.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.551506, "center_y":0.556934, "width":0.714107, "height":0.675383}, "confidence":0.968690}
+ ] 
+}, 
+{
+ "frame_id":3, 
+ "filename":"data/validation/8e72808537176248.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.937038, "center_y":0.591346, "width":0.077567, "height":0.137236}, "confidence":0.861946}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.910328, "center_y":0.591388, "width":0.151833, "height":0.133469}, "confidence":0.824501}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.811481, "center_y":0.594947, "width":0.038978, "height":0.171728}, "confidence":0.715337}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.405298, "center_y":0.580862, "width":0.960008, "height":0.915731}, "confidence":0.316757}
+ ] 
+}, 
+{
+ "frame_id":4, 
+ "filename":"data/validation/b292c1fb4197276a.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.508850, "center_y":0.483723, "width":0.810861, "height":0.689590}, "confidence":0.985292}
+ ] 
+}, 
+{
+ "frame_id":5, 
+ "filename":"data/validation/3f8b2a35be3341ae.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.509165, "center_y":0.507457, "width":0.738944, "height":0.832866}, "confidence":0.957649}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.942250, "center_y":0.405360, "width":0.121591, "height":0.353053}, "confidence":0.576510}
+ ] 
+}, 
+{
+ "frame_id":6, 
+ "filename":"data/validation/81be0b735c57cb7e.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.394413, "center_y":0.546623, "width":0.944315, "height":0.642810}, "confidence":0.645584}
+ ] 
+}, 
+{
+ "frame_id":7, 
+ "filename":"data/validation/9a8637fb33ba2e11.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.484860, "center_y":0.507580, "width":0.749772, "height":0.626972}, "confidence":0.986860}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.141927, "center_y":0.513037, "width":0.268348, "height":0.273746}, "confidence":0.505444}
+ ] 
+}, 
+{
+ "frame_id":8, 
+ "filename":"data/validation/bbe07c3a618b3a5a.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.568157, "center_y":0.505586, "width":0.899349, "height":0.833861}, "confidence":0.878113}
+ ] 
+}, 
+{
+ "frame_id":9, 
+ "filename":"data/validation/66ebca32add046cf.jpg", 
+ "objects": [ 
+
+ ] 
+}, 
+{
+ "frame_id":10, 
+ "filename":"data/validation/8929c86d5aecf832.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.945262, "center_y":0.209540, "width":0.137371, "height":0.154229}, "confidence":0.585592}, 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.424611, "center_y":0.520948, "width":0.795858, "height":0.652375}, "confidence":0.361350}
+ ] 
+}, 
+{
+ "frame_id":11, 
+ "filename":"data/validation/9ea4706b69ca4217.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.495556, "center_y":0.599865, "width":1.040250, "height":0.760213}, "confidence":0.953859}
+ ] 
+}, 
+{
+ "frame_id":12, 
+ "filename":"data/validation/fa748ef4fa55ee54.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"ambulance", "relative_coordinates":{"center_x":0.407636, "center_y":0.429637, "width":1.195624, "height":0.820723}, "confidence":0.851449}
+ ] 
+}
+]
