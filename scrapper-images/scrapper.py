@@ -6,6 +6,7 @@ import base64
 import hashlib
 import socket
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import time
 import os
 from PIL import Image
@@ -38,7 +39,14 @@ OUTPUT_FOLDER_IMAGES = args['images']
 OUTPUT_FOLDER_LINKS = args['links']
 
 
-def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver, sleep_between_interactions: int = 1):
+def createDirectoryIfNotExist(folder):
+  if not os.path.exists(folder):
+    os.makedirs(folder)
+
+createDirectoryIfNotExist(OUTPUT_FOLDER_IMAGES)
+createDirectoryIfNotExist(OUTPUT_FOLDER_LINKS)
+
+def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver.Chrome, sleep_between_interactions: int = 1):
     def scroll_to_end(wd):
         wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(sleep_between_interactions)
@@ -60,7 +68,7 @@ def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver,
         scroll_to_end(wd)
 
         # get all image thumbnail results
-        thumbnail_results = wd.find_elements_by_css_selector("img.Q4LuWd")
+        thumbnail_results = wd.find_elements(By.CLASS_NAME,"Q4LuWd")
         number_results = len(thumbnail_results)
 
         print(
@@ -76,18 +84,18 @@ def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver,
             
             try:
                 # extract image urls
-                actual_images = wd.find_elements_by_css_selector('img.n3VNCb')
+                actual_images = wd.find_elements(By.CLASS_NAME, 'iPVvYb')
                 for actual_image in actual_images:
                     src = actual_image.get_attribute('src')
-                    # print(len(src))
+                    print(src)
                     if src and 'http' in src:
                         image_urls.add(src)
                         download_image(output_folder, src)
-                    # elif 'data:' in src:
-                    #     images_base64.add(src)
-                    #     download_base64(output_folder, src)
+                    elif 'data:' in src:
+                        images_base64.add(src)
+                        download_base64(output_folder, src)
             except:
-                print('error to find img.n3VNCb')
+                print('error to find img.iPVvYb')
 
             with open(filepath_links, 'a') as f:
                 for link in image_urls:
@@ -101,16 +109,16 @@ def fetch_image_and_download(query: str, max_links_to_fetch: int, wd: webdriver,
                 print(f"Found: {image_count} image, done!")
                 return image_urls, images_base64
 
-        has_more = wd.find_element_by_css_selector('.YstHxe')
+        has_more = wd.find_element(By.CLASS_NAME, 'YstHxe')
         if (has_more and not 'none' in has_more.get_attribute('style')):
-            load_more_button = wd.find_element_by_css_selector(".mye4qd")
+            load_more_button = wd.find_element(By.CLASS_NAME,"mye4qd")
+            print('load more')
             if load_more_button:
-                wd.execute_script(
-                    "document.querySelector('.mye4qd').click();")
+                load_more_button.click()
                 time.sleep(10)
         else:
             try:
-                see_more = wd.find_element_by_css_selector('span.r0zKGf')
+                see_more = wd.find_element(By.CLASS_NAME,'r0zKGf')
                 if see_more:
                     print('dont has more')
                     break
@@ -139,7 +147,7 @@ def download_image(folder_path: str, url: str):
     try:
         folder_path = os.path.join(folder_path)
         if not os.path.exists(folder_path):
-            os.makedirs(folder_path)
+            os.makedirs(folder_path,511,True)
         file_path = os.path.join(
             folder_path, hashlib.sha1(img_data).hexdigest()[:10] + '.jpg')
         
@@ -170,14 +178,11 @@ def download_base64(folder_path: str, img_data: str):
 
 
 if __name__ == '__main__':
-    wd = webdriver.Chrome(executable_path=DRIVER_PATH)
+    driver = webdriver.Chrome()
 
     for query in queries:
-        wd.get('https://google.com')
-        search_box = wd.find_element_by_css_selector('input.gLFyf')
-        search_box.send_keys(query)
-        links, base64s = fetch_image_and_download(query, max_links, wd)
+        links, base64s = fetch_image_and_download(query, max_links, driver)
         if not os.path.exists(OUTPUT_FOLDER_LINKS):
             os.makedirs(OUTPUT_FOLDER_LINKS)
         
-    wd.quit()
+    driver.quit()

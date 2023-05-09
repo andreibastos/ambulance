@@ -13,7 +13,7 @@ e salve na pasta scrapper-images
 ```bash
 virtualenv ENV
 source ENV/bin/activate
-pip3 install -r requirements
+pip3 install -r requirements.txt
 ```
 
 # Execução
